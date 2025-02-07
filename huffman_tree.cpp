@@ -209,7 +209,7 @@ private:
         if (node->is_leaf) {
             // string x = code;
             huffman_codes[node->ascii_code] = code;
-            cout << node->ascii_code << " " << code << "\n";
+            // cout << node->ascii_code << " " << code << "\n";
             return;
         }
 
@@ -261,8 +261,9 @@ private:
         //now encode our data and write it to our output file
         for (char& ch: file_data) {
             *output_file << huffman_codes[ch];
-            cout << huffman_codes[ch];
+            // cout << huffman_codes[ch];
         }
+        // cout << "\n";
 
 
 
@@ -351,11 +352,11 @@ private:
             if (node->is_leaf) {
 
                 *out_file << (char) (node->ascii_code);
-                cout << (char) (node->ascii_code);
+                // cout << (char) (node->ascii_code);
                 node = decoded_root;
             }
         }
-
+        out_file->close();
         return;
 
 
